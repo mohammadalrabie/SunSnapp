@@ -33,7 +33,7 @@ namespace SunSnap.Controllers
             const double EarthAxialTilt = 23.44;
             const double SolarConstant = 0.986;
 
-
+             
             if (DateTime.TryParse(UploadDate, out DateTime userDateTime))
             {
                 TimeSpan currentTime = userDateTime.TimeOfDay;
