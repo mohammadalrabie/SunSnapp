@@ -1,0 +1,31 @@
+﻿@model List<Photo> 
+
+@{
+    ViewData["Title"] = "Sun Location Result";
+}
+
+<h2>Sun Location Result</h2>
+
+    @foreach (var photo in Model) 
+    {
+    <div class="photo-result card shadow-lg p-3 mb-4 bg-white rounded">
+        <h3 class="text-primary">Photo ID: @photo.Id</h3>
+        <h4 class="text-secondary">File Name: <strong>@photo.FileName.Substring(0, photo.FileName.Length - 4)</strong></h4>
+        <div class="text-center">
+            <img src="@photo.FilePath" alt="Sun Location Photo" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+        </div>
+        <p class="mt-2"><strong>Uploaded on:</strong> <span class="text-info">@photo.UploadDate.ToString("yyyy-MM-dd HH:mm:ss")</span></p>
+        <p><strong>Active Period:</strong> <span class="text-success">@photo.PeriodStart.ToString(@"hh\:mm") - @photo.PeriodEnd.ToString(@"hh\:mm")</span></p>
+    </div>
+
+    }
+
+
+<div class="back-button mt-3">
+    <a href="@Url.Action("Index", "Photos")" class="btn btn-secondary">Back to Gallery</a>
+</div>
+
+    // hello 
+
+
+
